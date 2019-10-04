@@ -47,29 +47,29 @@
       </button> 
     不用折叠按钮也可以的-->
       <!-- <div class="collapse navbar-collapse in" id="navbarNav"> -->
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item w-100 ml-0 ml-3">
-            <a class="nav-link p-0 text-nowrap text-center" href="#">
-              首页
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item w-100 ml-0 ml-3 active">
-            <a class="nav-link p-0 text-nowrap text-center" href="#">
-              在线定制
-            </a>
-          </li>
-          <li class="nav-item w-100 ml-0 ml-3">
-            <a class="nav-link p-0 text-nowrap text-center" href="#">
-              标准箱
-            </a>
-          </li>
-          <li class="nav-item w-100 ml-0 ml-3">
-            <a class="nav-link p-0 text-nowrap text-center" href="#">
-              品质保障
-            </a>
-          </li>
-        </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item w-100 ml-0 ml-3">
+          <a class="nav-link p-0 text-nowrap text-center" href="#">
+            首页
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item w-100 ml-0 ml-3 active">
+          <a class="nav-link p-0 text-nowrap text-center" href="#">
+            在线定制
+          </a>
+        </li>
+        <li class="nav-item w-100 ml-0 ml-3">
+          <a class="nav-link p-0 text-nowrap text-center" href="#">
+            标准箱
+          </a>
+        </li>
+        <li class="nav-item w-100 ml-0 ml-3">
+          <a class="nav-link p-0 text-nowrap text-center" href="#">
+            品质保障
+          </a>
+        </li>
+      </ul>
       <!-- </div> -->
     </nav>
 
@@ -91,6 +91,8 @@
           <p class="step-text text-center">1.定制纸箱</p>
         </section>
 
+        <input type="checkbox" class="d-none" id="progress2" />
+        <!--用于给下一步按钮做响应，并应用动画效果在其下一个同级元素即进度条-->
         <section class="d-flex flex-column justify-content-center">
           <div class="d-flex justify-content-center align-items-center">
             <div class="progress">
@@ -489,21 +491,24 @@
           </div>
 
           <div class="form-group row m-0 d-flex justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-outline-danger p-0"
+            <label
+              type="button"
+              class="back btn btn-outline-danger p-0"
               name="back"
-              id="back"
+              id="back2"
+              for="progress2"
             >
-              <a href="">
-                上一步
-              </a>
-            </button>
-            <button type="submit" class="btn p-0" name="next" id="next">
-              <a href="">
-                下一步
-              </a>
-            </button>
+              上一步
+            </label>
+            <label
+              type="submit"
+              class="next btn p-0"
+              name="next"
+              id="next2"
+              for="progress2"
+            >
+              下一步
+            </label>
           </div>
         </form>
       </article>
