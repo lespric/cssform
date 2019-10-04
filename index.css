@@ -100,7 +100,7 @@ header .active {
   color: #fff;
 } /* 定义顶部导航栏链接的样式及其悬浮状态、点击状态 */
 
-#navbar-top .navbar-btn {
+/* #navbar-top .navbar-btn {
   background-color: #1d7ad9;
 }
 #navbar-top .navbar-btn .navbar-toggler-icon {
@@ -109,7 +109,7 @@ header .active {
 }
 #navbar-top .navbar-btn:hover {
   opacity: 0.5;
-} /* 定义顶部导航栏的折叠按钮样式 */
+} 定义顶部导航栏的折叠按钮样式 */
 
 main {
   padding: 0 18.75%;
