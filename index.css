@@ -1,0 +1,460 @@
+@media (max-width: 575.98px) {
+  html {
+    font-size: 1rem;
+  }
+} /* Extra small devices (portrait phones, less than 576px) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  html {
+    font-size: 1.5rem;
+  }
+} /* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 2rem;
+  }
+} /* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  html {
+    font-size: 2rem;
+  }
+} /* Large devices (desktops, 992px and up) */
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 3rem;
+  }
+} /* Extra large devices (large desktops, 1200px and up) */
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-size: 0.625rem;
+  font-family: "MicrosoftYaHei", sans-serif;
+} /* 定义全局属性 */
+
+header {
+  padding: 0 18.75%;
+  height: 2.5em;
+
+  font-size: 0.4em;
+  color: #fff;
+
+  background-color: #1d7ad9;
+} /* 定义页首属性 */
+
+header .btn-group {
+    height: 100%;
+}
+header .btn {
+  width: 3.5em;
+  height: 100%;
+
+  font-size: 0.4em;
+  font-weight: 600;
+  color: #fff;
+
+  border-radius: 0;
+  border-left: 0.1em solid #fff;
+  border-right: 0.1em solid #fff;
+  transition: all 0.2s ease;
+}
+header .btn:hover,
+header .btn:focus,
+header .active {
+  width: 6.5em;
+
+  color: #333;
+
+  border: none;
+  box-shadow: none;
+  background-color: #fff;
+} /* 定义登陆和注册按钮组的样式，以及其悬浮状态和点击状态 */
+
+#navbar-top {
+  padding: 0.6em 18.75%;
+  background-color: #f9f9f9;
+}
+#navbar-top .nav-item {
+  padding: 0.4em;
+
+  border-radius: 0.2em;
+  background-color: #fff;
+  box-shadow: 1px 1px 0 rgba(3, 3, 3, 0.08);
+  cursor: pointer;
+}
+#navbar-top .nav-link {
+  font-size: 0.4em;
+  font-weight: 600;
+  color: #333;
+} /* 定义顶部导航栏的样式 */
+#navbar-top .nav-item:hover,
+#navbar-top .active {
+  background-color: #1d7ad9;
+}
+#navbar-top .nav-item:hover .nav-link,
+#navbar-top .active .nav-link {
+  color: #fff;
+} /* 定义顶部导航栏链接的样式及其悬浮状态、点击状态 */
+
+#navbar-top .navbar-btn {
+  background-color: #1d7ad9;
+}
+#navbar-top .navbar-btn .navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+}
+#navbar-top .navbar-btn:hover {
+  opacity: 0.5;
+} /* 定义顶部导航栏的折叠按钮样式 */
+
+main {
+  padding: 0 18.75%;
+}
+
+#steps {
+  float: right;
+  padding: 1em 0;
+}
+#steps .progress {
+  width: 5em;
+  height: 0.2em;
+
+  font-size: 0.625rem;
+  font-weight: 600;
+
+  border-radius: 0;
+  background-color: #ccc;
+}
+#steps section:first-child .progress {
+  border-radius: 0.1em 0 0 0.1em;
+}
+#steps section:last-child .progress {
+  border-radius: 0 0.1em 0.1em 0;
+} /* 定义进度条的左右两端的圆角 */
+#steps .progress-bar {
+  background-color: #ff7f02;
+  border-radius: 0.1em;
+}
+#steps section:first-child .progress-bar {
+  width: 100%;
+}
+#steps .step {
+  position: absolute;
+
+  width: 1.5em;
+  height: 1.5em;
+
+  font-size: 0.4em;
+  color: #fff;
+
+  border-radius: 50%;
+  background-color: #ccc;
+}
+#steps section:first-child .step {
+  background-color: #ff7f02;
+} /* 定义进度条和序号的样式*/
+
+#steps .step-text {
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #ccc;
+}
+#steps section:first-child .step-text {
+  color: #ff7f02;
+} /* 定义进度条的序号文字的样式 */
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes progress-bg {
+  0% {
+    background-color: #ccc;
+  }
+  100% {
+    background-color: #ff7f02;
+  }
+}
+@keyframes progress-text {
+  0% {
+    color: #ccc;
+  }
+  100% {
+    color: #ff7f02;
+  }
+} /* 定义进度条变化的关键帧动画 */
+
+#form {
+  float: left;
+  margin-top: 0.3em;
+  margin-bottom: 1.4em;
+  width: 100%;
+}
+#form .form-prompt {
+  margin-bottom: .5em;
+
+  font-size: 0.6em;
+  font-weight: 600;
+  color: #333;
+}
+#form .form-prompt:before {
+  display: inline-block;
+  content: "";
+  margin-right: 0.5em;
+
+  height: 1em;
+  width: 0.2em;
+
+  vertical-align: middle;
+  background-color: #1d7ad9;
+  border-radius: 0.2em;
+} /* 定义表单区的提示标题 */
+
+#paperbox {
+  width: 100%;
+  border: 0.05em solid #e8e8e8;
+}
+#paperbox .form-title {
+  width: 100%;
+  height: 1.1em;
+  background: linear-gradient(to bottom, #f1f1f1, #f5f5f5);
+}
+#paperbox .form-title .title-text {
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #1d7ad9;
+}
+#box-type .form-title .title-icon {
+  display: inline-block;
+  margin: 0.4em;
+
+  width: 0.6em;
+  height: 0.5em;
+
+  background: url(../cssform/img/box@2x.png) no-repeat;
+  background-size: cover;
+} /* 定义表单内容区的选择箱型的标题 */
+
+#paperbox .form-content {
+  padding: 0.25em 0.8em;
+  width: 100%;
+
+  background-color: #fbfcff;
+}
+#paperbox .form-content .custom-control {
+  margin: 1em 2.4em;
+  min-height: 0;
+
+  font-size: 0.5em;
+  color: #666;
+}
+#paperbox .form-content .custom-control-label {
+  cursor: pointer;
+}
+#paperbox .form-content .custom-control-label::before,
+#paperbox .form-content .custom-control-label::after {
+  display: inline-block;
+  top: 0.25em;
+  left: -2em;
+
+  width: 1em;
+  height: 1em;
+} /* 定义表单内容区的单选按钮组的样式 */
+
+#paperbox .form-content .dropdown {
+  padding: 0.3em 0.4em;
+  padding-right: 0.1em;
+
+  height: 1.2em;
+
+  font-size: 0.625rem;
+  border: 0.05em solid #e8e8e8;
+  background-color: #fff;
+}
+#paperbox .form-content .dropdown .btn {
+  font-size: 0.4em;
+  color: #999;
+}
+#paperbox .form-content .dropdown .btn:focus {
+  box-shadow: none;
+}
+#paperbox .form-content .dropdown .dropdown-toggle {
+  display: inline-block;
+  margin-left: 1em;
+
+  width: 1.2em;
+  height: 1.5em;
+
+  font-size: 1.5em;
+  color: #fff;
+
+  border: none;
+  border-radius: 0.1em;
+  background-color: #1d7ad9;
+}
+#paperbox .form-content .dropdown .dropdown-menu {
+  min-width: 100%;
+  font-size: 0.625rem;
+}
+#paperbox .form-content .dropdown .dropdown-item {
+  padding: 1em;
+
+  font-size: 0.4em;
+  color: #666;
+} /* 定义表单内容区的下拉菜单的样式 */
+
+#box-size .form-title .title-icon {
+  display: inline-block;
+  margin: 0.4em;
+  margin-left: 0.3em;
+
+  width: 0.7em;
+  height: 0.6em;
+
+  background: url(../cssform/img/Ruler@2x.png) no-repeat;
+  background-size: cover;
+} /* 定义表单内容区的确定尺寸的标题 */
+
+#specific-size .form-group {
+  margin: 0.3em 0;
+  padding: 0 0.3em;
+}
+#specific-size label,
+#specific-size span {
+  margin: 0 0.4em;
+  font-size: 0.5em;
+  color: #666;
+}
+#specific-size .form-control {
+  display: inline-block;
+  padding: 0.4em;
+
+  width: 4.5em;
+  height: 2em;
+
+  font-size: 0.5em;
+  color: #666;
+
+  border: 0.04em solid #e8e8e8;
+  border-radius: 0;
+}
+#specific-size .form-control:focus {
+  box-shadow: 0 0 0.4em #1d7ad9;
+} /* 定义表单内容区的确定尺寸的具体数字区的样式 */
+
+#box-material .form-title .title-icon {
+  display: inline-block;
+  margin: 0.4em;
+  margin-left: 0.5em;
+
+  width: 0.5em;
+  height: 0.6em;
+
+  background: url(../cssform/img/Cut@2x.png) no-repeat;
+  background-size: cover;
+} /* 定义表单内容区的选择材质的标题 */
+
+#box-material .form-content {
+  padding: 1em 0.8em;
+} /* 定义表单内容区的选择材质的高度 */
+
+#next,
+#back {
+  margin: 6em 4em;
+  margin-bottom: 4em;
+
+  width: 7.5em;
+  height: 2em;
+
+  font-size: 0.6em;
+  font-weight: 600;
+
+  border-radius: 0.2em;
+}
+#next {
+  color: #fff;
+  background-color: #e15053;
+}
+#next:focus,
+#next:hover,
+#back:focus,
+#back:hover {
+  box-shadow: 0 0 0.5em #741314;
+}
+#next a {
+  color: #fff;
+}
+#back a {
+  color: #e15053;
+}
+#next:focus a,
+#next:hover a,
+#back:focus a,
+#back:hover a {
+  text-decoration: none;
+  color: #fff;
+} /* 定义上一步和下一步的按钮样式 */
+
+footer {
+  padding: 1.5em 18.75%;
+
+  width: 100%;
+
+  background-color: #f9f9f9;
+}
+
+footer .brand {
+  margin: 0.5em 0;
+
+  font-size: 0.4em;
+  font-weight: 600;
+  color: #999;
+} /* 定义页底的左边品牌区的样式 */
+footer .link {
+  margin: 0 -0.625em;
+}
+footer .link a {
+  margin: 0.5em 1.25em;
+  font-size: 0.4em;
+  color: #999;
+}
+footer .link a:focus,
+footer .link a:hover {
+  text-decoration: none;
+  color: #1d7ad9;
+} /* 定义页底的中间链接区的样式 */
+footer .contact {
+  padding: 0.5em 0;
+  font-size: 0.4em;
+}
+footer .contact p {
+  margin-bottom: 0.5em;
+  color: #999;
+}
+footer .contact .qrcode {
+  width: 6em;
+  height: 6em;
+
+  background: url(../cssform/img/qrcode@2x.png) no-repeat;
+  background-size: cover;
+} /* 定义页底的右边联系方式区的样式 */
+
+aside {
+  padding: 0.5em 18.75%;
+
+  font-size: 0.3em;
+  color: #fff;
+
+  background-color: #1d7ad9;
+} /* 定义页底的安全备案区的样式 */
