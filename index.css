@@ -2,6 +2,7 @@
   html {
     font-size: 1rem;
   }
+  
 } /* Extra small devices (portrait phones, less than 576px) */
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -369,7 +370,14 @@ main {
 .back:focus,
 .back:hover {
   box-shadow: 0 0 0.5em #741314;
+} 
+.next:focus,
+.next:hover {
   color: #FFF;
+} 
+.next label,
+.back label {
+  cursor: pointer;
 } /* 定义上一步和下一步的按钮样式  */
 /* .next a {
   color: #fff;
