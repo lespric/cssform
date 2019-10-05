@@ -2,7 +2,7 @@
   html {
     font-size: 1rem;
   }
-  
+
 } /* Extra small devices (portrait phones, less than 576px) */
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -39,7 +39,6 @@ body {
 
 header {
   padding: 0 18.75%;
-  height: 2.5em;
 
   font-size: 0.4em;
   color: #fff;
@@ -51,8 +50,8 @@ header .btn-group {
   height: 100%;
 }
 header .btn {
+  padding: 0.8em 0;
   width: 3.5em;
-  height: 100%;
 
   font-size: 0.4em;
   font-weight: 600;
@@ -61,6 +60,8 @@ header .btn {
   border-radius: 0;
   border-left: 0.1em solid #fff;
   border-right: 0.1em solid #fff;
+
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 header .btn:hover,
@@ -114,6 +115,7 @@ header .active {
 
 main {
   padding: 0 18.75%;
+  margin-bottom: 1.4em;
 }
 
 #steps {
@@ -131,7 +133,7 @@ main {
   background-color: #ccc;
 }
 #steps .progress-bar {
-  width: 0%;
+  width: 100%;
   background-color: #ff7f02;
   border-radius: 0;
 }
@@ -143,9 +145,6 @@ main {
 #steps section:first-child .progress-bar {
   border-radius: 0 0.1em 0.1em 0;
 } /* 定义进度条的左右两端的圆角 */
-#steps section:first-child .progress-bar {
-  width: 100%;
-}
 #steps .step {
   position: absolute;
 
@@ -156,9 +155,6 @@ main {
   color: #fff;
 
   border-radius: 50%;
-  background-color: #ccc;
-}
-#steps section:first-child .step {
   background-color: #ff7f02;
 } /* 定义进度条和序号的样式*/
 
@@ -168,17 +164,46 @@ main {
 
   font-size: 0.5em;
   font-weight: 600;
-  color: #ccc;
-}
-#steps section:first-child .step-text {
   color: #ff7f02;
 } /* 定义进度条的序号文字的样式 */
+
+section .progress-bar,
+section .step,
+section .step-text {
+  -webkit-transition: width 1s ease, background-color 1s ease, color 1s ease;
+  transition: width 1s ease, background-color 1s ease, color 1s ease;
+} 
+/* 定义进度条变化过渡动画的效果 */
+
+#steps .active .progress-bar {
+  width: 100%;
+}
+#steps .active ~ section .progress-bar {
+  width: 0%;
+}
+
+#steps .active .step {
+  background-color: #ff7f02;
+}
+#steps .active ~ section .step {
+  background-color: #ccc;
+}
+
+#steps .active .step-text {
+  color: #ff7f02;
+} 
+#steps .active ~ section .step-text {
+  color: #ccc;
+}
+/* 给轮播图的轮播指示定义动画变化，
+通过默认状态为选中状态，~符号指定后面都为初始状态，由此实现点击下一步，保留已选中状态 */
+
 
 #form {
   float: left;
   margin-top: 0.3em;
-  margin-bottom: 1.4em;
   width: 100%;
+  overflow-y: auto;
 }
 #form .form-prompt {
   margin-bottom: 0.5em;
@@ -200,16 +225,20 @@ main {
   border-radius: 0.2em;
 } /* 定义表单区的提示标题 */
 
-#paperbox {
+#form .form-container,
+#carousel-control {
   width: 100%;
   border: 0.05em solid #e8e8e8;
 }
-#paperbox .form-title {
+#carousel-control {
+  border-top: none;
+}
+#form .form-title {
   width: 100%;
   height: 1.1em;
   background: linear-gradient(to bottom, #f1f1f1, #f5f5f5);
 }
-#paperbox .form-title .title-text {
+#form .form-title .title-text {
   font-size: 0.5em;
   font-weight: 600;
   color: #1d7ad9;
@@ -225,24 +254,24 @@ main {
   background-size: cover;
 } /* 定义表单内容区的选择箱型的标题 */
 
-#paperbox .form-content {
+#form .form-content {
   padding: 0.25em 0.8em;
   width: 100%;
 
   background-color: #fbfcff;
 }
-#paperbox .form-content .custom-control {
+#form .form-content .custom-control {
   margin: 1em 2.4em;
   min-height: 0;
 
   font-size: 0.5em;
   color: #666;
 }
-#paperbox .form-content .custom-control-label {
+#form .form-content .custom-control-label {
   cursor: pointer;
 }
-#paperbox .form-content .custom-control-label::before,
-#paperbox .form-content .custom-control-label::after {
+#form .form-content .custom-control-label::before,
+#form .form-content .custom-control-label::after {
   display: inline-block;
   top: 0.25em;
   left: -2em;
@@ -251,7 +280,7 @@ main {
   height: 1em;
 } /* 定义表单内容区的单选按钮组的样式 */
 
-#paperbox .form-content .dropdown {
+#form .form-content .dropdown {
   padding: 0.3em 0.4em;
   padding-right: 0.1em;
 
@@ -261,14 +290,14 @@ main {
   border: 0.05em solid #e8e8e8;
   background-color: #fff;
 }
-#paperbox .form-content .dropdown .btn {
+#form .form-content .dropdown .btn {
   font-size: 0.4em;
   color: #999;
 }
-#paperbox .form-content .dropdown .btn:focus {
+#form .form-content .dropdown .btn:focus {
   box-shadow: none;
 }
-#paperbox .form-content .dropdown .dropdown-toggle {
+#form .form-content .dropdown .dropdown-toggle {
   display: inline-block;
   margin-left: 1em;
 
@@ -282,18 +311,19 @@ main {
   border-radius: 0.1em;
   background-color: #1d7ad9;
 }
-#paperbox .form-content .dropdown .dropdown-menu {
+#form .form-content .dropdown .dropdown-menu {
   min-width: 100%;
   font-size: 0.625rem;
 }
-#paperbox .form-content .dropdown .dropdown-item {
+#form .form-content .dropdown .dropdown-item {
   padding: 1em;
 
   font-size: 0.4em;
   color: #666;
 } /* 定义表单内容区的下拉菜单的样式 */
 
-#box-size .form-title .title-icon {
+#box-size .form-title .title-icon,
+#box-amount .form-title .title-icon {
   display: inline-block;
   margin: 0.4em;
   margin-left: 0.3em;
@@ -305,17 +335,21 @@ main {
   background-size: cover;
 } /* 定义表单内容区的确定尺寸的标题 */
 
-#specific-size .form-group {
+.specific-size .form-group,
+.amount-size .form-group {
   margin: 0.3em 0;
   padding: 0 0.3em;
 }
-#specific-size label,
-#specific-size span {
+.specific-size label,
+.specific-size span,
+.amount-size label,
+.amount-size span {
   margin: 0 0.4em;
   font-size: 0.5em;
   color: #666;
 }
-#specific-size .form-control {
+.specific-size .form-control,
+.amount-size .form-control {
   display: inline-block;
   padding: 0.4em;
 
@@ -328,7 +362,8 @@ main {
   border: 0.04em solid #e8e8e8;
   border-radius: 0;
 }
-#specific-size .form-control:focus {
+.specific-size .form-control:focus,
+.amount-size .form-control:focus {
   box-shadow: 0 0 0.4em #1d7ad9;
 } /* 定义表单内容区的确定尺寸的具体数字区的样式 */
 
@@ -348,9 +383,43 @@ main {
   padding: 1em 0.8em;
 } /* 定义表单内容区的选择材质的高度 */
 
+#box-file .custom-file-input,
+#box-file .custom-file-label {
+  padding: 0.4em;
+  margin: 1em 0;
+
+  width: 100%;
+  height: 2em;
+
+  font-size: 0.5em;
+  color: #666;
+
+  border: 0.04em solid #e8e8e8;
+  border-radius: .5em;
+}
+#box-file .custom-file-label:after {
+  display: flex;
+  align-items: center;
+  padding: 0 0.4em;
+  height: 100%;
+
+  color: #FFF;
+
+  border-radius: 0 .5em .5em 0;
+  background-color: #1d7ad9;
+}
+#box-file .custom-file-input:focus ~ .custom-file-label {
+  box-shadow: 0 0 0.5em #e15053;
+}
+
+#form .invalid-feedback {
+   font-size: .4em;
+   color: #666;
+}
+
 .next,
 .back {
-  margin: 6em 4em;
+  margin: 6em auto;
   margin-bottom: 4em;
 
   width: 7.5em;
@@ -374,24 +443,7 @@ main {
 .next:focus,
 .next:hover {
   color: #FFF;
-} 
-.next label,
-.back label {
-  cursor: pointer;
 } /* 定义上一步和下一步的按钮样式  */
-/* .next a {
-  color: #fff;
-}
-.back a {
-  color: #e15053;
-} */
-/* .next:focus a,
-.next:hover a,
-.back:focus a,
-.back:hover a {
-  text-decoration: none;
-  color: #fff;
-}*/
 
 footer {
   padding: 1.5em 18.75%;
@@ -445,58 +497,3 @@ aside {
 
   background-color: #1d7ad9;
 } /* 定义页底的安全备案区的样式 */
-
-/* @keyframes progress {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes progress-bg {
-  0% {
-    background-color: #ccc;
-  }
-  100% {
-    background-color: #ff7f02;
-  }
-}
-@keyframes progress-text {
-  0% {
-    color: #ccc;
-  }
-  100% {
-    color: #ff7f02;
-  }
-} 定义进度条变化的关键帧动画 */
-
-section .progress-bar,
-section .step,
-section .step-text {
-  transition: all 2s ease;
-} /* 定义进度条变化过渡动画的效果 */
-
-/* #progress2:checked + section .progress-bar {
-  animation: progress 2s ease forwards;
-  animation-direction: alternate;
-}
-#progress2:checked + section .step {
-  animation: progress-bg 2s ease forwards;
-  animation-direction: alternate;
-}
-#progress2:checked + section .step-text {
-  animation: progress-text 2s ease forwards;
-  animation-direction: alternate;
-} 应用动画效果到对应input的下一个同级元素即进度条 */
-
-#progress2:checked + section .progress-bar {
-  width: 100%;
-}
-#progress2:checked + section .step {
-  background-color: #ff7f02;
-}
-#progress2:checked + section .step-text {
-  color: #ff7f02;
-} /* 通过点击按钮，使对应的input获取验证状态，从而使其下一个同级元素即进度条进行动画变化 */
-

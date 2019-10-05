@@ -25,11 +25,11 @@
     <header class="d-flex justify-content-between align-items-center">
       <div class="phone">
         客服热线 :
-        <span class="tel:01059478634">010-594-78634</span>
+        <span class="tel:01059478634 text-nowrap">010-594-78634</span>
       </div>
       <div class="btn-group">
-        <button type="button" class="btn p-0 m-0">登陆</button>
-        <button type="button" class="btn p-0 m-0 active">注册</button>
+        <button type="button" class="btn m-0">登陆</button>
+        <button type="button" class="btn m-0 active">注册</button>
       </div>
     </header>
 
@@ -74,446 +74,663 @@
     </nav>
 
     <main class="clearfix">
-      <article class="d-flex justify-content-center" id="steps">
-        <section class="d-flex flex-column justify-content-center">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <span class="step text-center align-middle">1</span>
-          </div>
-          <p class="step-text text-center">1.定制纸箱</p>
-        </section>
-
-        <input type="checkbox" class="d-none" id="progress2" />
-        <!--用于给下一步按钮做响应，并应用动画效果在其下一个同级元素即进度条-->
-        <section class="d-flex flex-column justify-content-center">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <span class="step text-center align-middle">2</span>
-          </div>
-          <p class="step-text text-center">2.选择数量</p>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <span class="step text-center align-middle">3</span>
-          </div>
-          <p class="step-text text-center">3.上传附件</p>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <span class="step text-center align-middle">4</span>
-          </div>
-          <p class="step-text text-center">4.确认下单</p>
-        </section>
-      </article>
-
-      <article class="" id="form">
-        <div class="form-prompt">请您按照以下步骤来定制您的纸箱</div>
-        <form action="" method="get" id="paperbox" name="paperbox" novalidate>
-          <div id="box-type">
-            <div class="form-title d-flex align-items-center">
-              <span class="title-icon"></span>
-              <span class="title-text">选择箱型</span>
-            </div>
-            <div class="form-content d-flex align-items-center">
-              <div class="form-group m-0 form-row no-gutters">
+      <form
+        action=""
+        method="get"
+        id="paperbox"
+        name="paperbox"
+        class="carousel slide"
+        data-interval="false"
+      >
+        <article
+          class="d-flex justify-content-center carousel-indicators position-static m-0"
+          id="steps"
+        >
+          <section
+            class="d-flex flex-column justify-content-center active"
+            data-slide-to="0"
+          >
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="progress">
                 <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-type1"
-                    name="box-type"
-                    class="custom-control-input d-none"
-                    checked
-                  />
-                  <label class="custom-control-label" for="box-type1">
-                    对口箱
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-type2"
-                    name="box-type"
-                    class="custom-control-input d-none"
-                  />
-                  <label class="custom-control-label" for="box-type2">
-                    飞机盒
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-type3"
-                    name="box-type"
-                    class="custom-control-input d-none"
-                  />
-                  <label class="custom-control-label" for="box-type3">
-                    天地盖
-                  </label>
-                </div>
-              </div>
-
-              <div class="dropdown ml-auto d-flex align-items-center">
-                <button
-                  type="button"
-                  class="btn p-0 text-nowrap"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  查看详情
-                  <span class="dropdown-toggle"></span>
-                </button>
-                <div class="dropdown-menu p-0">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="box-size">
-            <div class="form-title d-flex align-items-center">
-              <span class="title-icon"></span>
-              <span class="title-text">确定尺寸</span>
-            </div>
-            <div class="form-content d-flex align-items-center">
-              <div class="form-group m-0 d-flex flex-column">
-                <div class="form-row no-gutters m-0">
-                  <div
-                    class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
-                  >
-                    <input
-                      type="radio"
-                      id="box-outside"
-                      name="box-size"
-                      class="custom-control-input d-none"
-                      checked
-                    />
-                    <label class="custom-control-label" for="box-outside">
-                      外径
-                    </label>
-                  </div>
-
-                  <div
-                    class="form-inline d-flex align-items-center"
-                    id="specific-size"
-                  >
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-length">
-                        长
-                      </label>
-                      <input
-                        type="search"
-                        id="box-length"
-                        name="box-outside-length"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-width">
-                        宽
-                      </label>
-                      <input
-                        type="search"
-                        id="box-width"
-                        name="box-outside-width"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-height">
-                        高
-                      </label>
-                      <input
-                        type="search"
-                        id="box-height"
-                        name="box-outside-height"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-row no-gutters m-0">
-                  <div
-                    class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
-                  >
-                    <input
-                      type="radio"
-                      id="box-inside"
-                      name="box-size"
-                      class="custom-control-input d-none"
-                    />
-                    <label class="custom-control-label" for="box-inside">
-                      内径
-                    </label>
-                  </div>
-
-                  <div
-                    class="form-inline d-flex align-items-center"
-                    id="specific-size"
-                  >
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-length">
-                        长
-                      </label>
-                      <input
-                        type="search"
-                        id="box-length"
-                        name="box-inside-length"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-width">
-                        宽
-                      </label>
-                      <input
-                        type="search"
-                        id="box-width"
-                        name="box-inside-width"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                    <div class="form-group flex-nowrap col-sm-4 col-12">
-                      <label for="box-inside-height">
-                        高
-                      </label>
-                      <input
-                        type="search"
-                        id="box-height"
-                        name="box-height"
-                        class="form-control"
-                        maxlength="4"
-                        oninput="value=value.replace(/[^\d]/g,'')"
-                        required
-                      />
-                      <span>mm</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="dropdown ml-auto d-flex align-items-center">
-                <button
-                  type="button"
-                  class="btn p-0 text-nowrap"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  查看详情
-                  <span class="dropdown-toggle"></span>
-                </button>
-                <div class="dropdown-menu p-0">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="box-material">
-            <div class="form-title d-flex align-items-center">
-              <span class="title-icon"></span>
-              <span class="title-text">选择材质</span>
-            </div>
-            <div class="form-content d-flex align-items-center">
-              <div class="form-group m-0 form-row no-gutters">
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-material1"
-                    name="box-material"
-                    class="custom-control-input d-none"
-                    checked
-                  />
-                  <label
-                    class="custom-control-label text-nowrap"
-                    for="box-material1"
-                  >
-                    三层A瓦优质
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-material2"
-                    name="box-material"
-                    class="custom-control-input d-none"
-                  />
-                  <label
-                    class="custom-control-label text-nowrap"
-                    for="box-material2"
-                  >
-                    四层A瓦优质
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-material3"
-                    name="box-material"
-                    class="custom-control-input d-none"
-                  />
-                  <label
-                    class="custom-control-label text-nowrap"
-                    for="box-material3"
-                  >
-                    五层A瓦优质
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-material4"
-                    name="box-material"
-                    class="custom-control-input d-none"
-                  />
-                  <label
-                    class="custom-control-label text-nowrap"
-                    for="box-material4"
-                  >
-                    六层A瓦优质
-                  </label>
-                </div>
-                <div
-                  class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
-                >
-                  <input
-                    type="radio"
-                    id="box-material5"
-                    name="box-material"
-                    class="custom-control-input d-none"
-                  />
-                  <label
-                    class="custom-control-label text-nowrap"
-                    for="box-material5"
-                  >
-                    七层A瓦优质
-                  </label>
-                </div>
-                <div
-                  class="custom-control p-0 col-sm d-none d-sm-block d-xl-none"
+                  class="progress-bar active"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
                 ></div>
               </div>
+              <span class="step text-center align-middle">1</span>
+            </div>
+            <p class="step-text text-center">1.定制纸箱</p>
+          </section>
 
-              <div class="dropdown ml-auto d-flex align-items-center">
-                <button
-                  type="button"
-                  class="btn p-0 text-nowrap"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  查看详情
-                  <span class="dropdown-toggle"></span>
-                </button>
-                <div class="dropdown-menu p-0">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+          <section
+            class="d-flex flex-column justify-content-center"
+            data-slide-to="1"
+          >
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="step text-center align-middle">2</span>
+            </div>
+            <p class="step-text text-center">2.选择数量</p>
+          </section>
+
+          <section
+            class="d-flex flex-column justify-content-center"
+            data-slide-to="2"
+          >
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="step text-center align-middle">3</span>
+            </div>
+            <p class="step-text text-center">3.上传附件</p>
+          </section>
+
+          <section
+            class="d-flex flex-column justify-content-center"
+            data-slide-to="3"
+          >
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <span class="step text-center align-middle">4</span>
+            </div>
+            <p class="step-text text-center">4.确认下单</p>
+          </section>
+        </article>
+
+        <article id="form" class="carousel-inner">
+          <div class="form-prompt">请您按照以下步骤来定制您的纸箱</div>
+          <div class="form-container clearfix">
+            <div class="carousel-item active" id="box-quality">
+              <div id="box-type">
+                <div class="form-title d-flex align-items-center">
+                  <span class="title-icon"></span>
+                  <span class="title-text">选择箱型</span>
+                </div>
+                <div class="form-content d-flex align-items-center">
+                  <div class="form-group m-0 form-row no-gutters">
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-type1"
+                        name="box-type"
+                        class="custom-control-input d-none"
+                        checked
+                      />
+                      <label class="custom-control-label" for="box-type1">
+                        对口箱
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-type2"
+                        name="box-type"
+                        class="custom-control-input d-none"
+                      />
+                      <label class="custom-control-label" for="box-type2">
+                        飞机盒
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-type3"
+                        name="box-type"
+                        class="custom-control-input d-none"
+                      />
+                      <label class="custom-control-label" for="box-type3">
+                        天地盖
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="dropdown ml-auto d-flex align-items-center">
+                    <button
+                      type="button"
+                      class="btn p-0 text-nowrap"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      查看详情
+                      <span class="dropdown-toggle"></span>
+                    </button>
+                    <div class="dropdown-menu p-0">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="box-size">
+                <div class="form-title d-flex align-items-center">
+                  <span class="title-icon"></span>
+                  <span class="title-text">确定尺寸</span>
+                </div>
+                <div class="form-content d-flex align-items-center">
+                  <div class="form-group m-0 d-flex flex-column">
+                    <div class="form-row no-gutters m-0">
+                      <div
+                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                      >
+                        <input
+                          type="radio"
+                          id="box-outside"
+                          name="box-size"
+                          class="custom-control-input d-none"
+                          checked
+                        />
+                        <label class="custom-control-label" for="box-outside">
+                          外径
+                        </label>
+                      </div>
+
+                      <div
+                        class="form-inline d-flex align-items-center specific-size"
+                      >
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-length1">
+                            长
+                          </label>
+                          <input
+                            type="search"
+                            id="box-length1"
+                            name="box-outside-length1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-width1">
+                            宽
+                          </label>
+                          <input
+                            type="search"
+                            id="box-width1"
+                            name="box-outside-width1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-height1">
+                            高
+                          </label>
+                          <input
+                            type="search"
+                            id="box-height1"
+                            name="box-outside-height1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row no-gutters m-0">
+                      <div
+                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                      >
+                        <input
+                          type="radio"
+                          id="box-inside"
+                          name="box-size"
+                          class="custom-control-input d-none"
+                        />
+                        <label class="custom-control-label" for="box-inside">
+                          内径
+                        </label>
+                      </div>
+
+                      <div
+                        class="form-inline d-flex align-items-center specific-size"
+                      >
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-length2">
+                            长
+                          </label>
+                          <input
+                            type="search"
+                            id="box-length2"
+                            name="box-inside-length2"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-width2">
+                            宽
+                          </label>
+                          <input
+                            type="search"
+                            id="box-width2"
+                            name="box-inside-width2"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-inside-height2">
+                            高
+                          </label>
+                          <input
+                            type="search"
+                            id="box-height2"
+                            name="box-height2"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>mm</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dropdown ml-auto d-flex align-items-center">
+                    <button
+                      type="button"
+                      class="btn p-0 text-nowrap"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      查看详情
+                      <span class="dropdown-toggle"></span>
+                    </button>
+                    <div class="dropdown-menu p-0">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="box-material">
+                <div class="form-title d-flex align-items-center">
+                  <span class="title-icon"></span>
+                  <span class="title-text">选择材质</span>
+                </div>
+                <div class="form-content d-flex align-items-center">
+                  <div class="form-group m-0 form-row no-gutters">
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-material1"
+                        name="box-material"
+                        class="custom-control-input d-none"
+                        checked
+                      />
+                      <label
+                        class="custom-control-label text-nowrap"
+                        for="box-material1"
+                      >
+                        三层A瓦优质
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-material2"
+                        name="box-material"
+                        class="custom-control-input d-none"
+                      />
+                      <label
+                        class="custom-control-label text-nowrap"
+                        for="box-material2"
+                      >
+                        四层A瓦优质
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-material3"
+                        name="box-material"
+                        class="custom-control-input d-none"
+                      />
+                      <label
+                        class="custom-control-label text-nowrap"
+                        for="box-material3"
+                      >
+                        五层A瓦优质
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-material4"
+                        name="box-material"
+                        class="custom-control-input d-none"
+                      />
+                      <label
+                        class="custom-control-label text-nowrap"
+                        for="box-material4"
+                      >
+                        六层A瓦优质
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control custom-radio custom-control-inline p-0 col-xl-1 col-sm col-12"
+                    >
+                      <input
+                        type="radio"
+                        id="box-material5"
+                        name="box-material"
+                        class="custom-control-input d-none"
+                      />
+                      <label
+                        class="custom-control-label text-nowrap"
+                        for="box-material5"
+                      >
+                        七层A瓦优质
+                      </label>
+                    </div>
+                    <div
+                      class="custom-control p-0 col-sm d-none d-sm-block d-xl-none"
+                    ></div>
+                  </div>
+
+                  <div class="dropdown ml-auto d-flex align-items-center">
+                    <button
+                      type="button"
+                      class="btn p-0 text-nowrap"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      查看详情
+                      <span class="dropdown-toggle"></span>
+                    </button>
+                    <div class="dropdown-menu p-0">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group row m-0 d-flex justify-content-center">
-            <button
-              type="button"
-              class="back btn btn-outline-danger p-0 d-flex"
-              name="back"
-              id="back2"
-            >
-              <label class="w-100 h-100 m-0 " for="progress2">
-                上一步
-              </label>
-            </button>
-            <button 
-            type="submit" 
-            class="next btn p-0 border-0 d-flex" 
-            name="next" 
-            id="next2"
-            >
-              <label class="w-100 h-100 m-0" for="progress2">
-                下一步
-              </label>
-            </button>
+            <div class="carousel-item" id="box-amount">
+              <div id="specific-amount">
+                <div class="form-title d-flex align-items-center">
+                  <span class="title-icon"></span>
+                  <span class="title-text">确定数量</span>
+                </div>
+                <div class="form-content d-flex align-items-center">
+                  <div class="form-group m-0 d-flex flex-column">
+                    <div class="form-row no-gutters m-0">
+                      <div
+                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                      >
+                        <input
+                          type="radio"
+                          id="outside-amount"
+                          name="box-amount"
+                          class="custom-control-input d-none"
+                          checked
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="outside-amount"
+                        >
+                          外包装
+                        </label>
+                      </div>
+
+                      <div
+                        class="form-inline d-flex align-items-center amount-size"
+                      >
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-xs1">
+                            小
+                          </label>
+                          <input
+                            type="search"
+                            id="box-xs1"
+                            name="box-outside-xs1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-md1">
+                            中
+                          </label>
+                          <input
+                            type="search"
+                            id="box-md1"
+                            name="box-outside-md1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-lg1">
+                            大
+                          </label>
+                          <input
+                            type="search"
+                            id="box-lg1"
+                            name="box-outside-lg1"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row no-gutters m-0">
+                      <div
+                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                      >
+                        <input
+                          type="radio"
+                          id="inside-amount"
+                          name="box-amount"
+                          class="custom-control-input d-none"
+                        />
+                        <label class="custom-control-label" for="inside-amount">
+                          内包装
+                        </label>
+                      </div>
+
+                      <div
+                        class="form-inline d-flex align-items-center amount-size"
+                      >
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-xs2">
+                            小
+                          </label>
+                          <input
+                            type="search"
+                            id="box-xs2"
+                            name="box-inside-xs2"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-md2">
+                            中
+                          </label>
+                          <input
+                            type="search"
+                            id="box-md2"
+                            name="box-inside-md"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                        <div class="form-group flex-nowrap col-sm-4 col-12">
+                          <label for="box-inside-lg2">
+                            大
+                          </label>
+                          <input
+                            type="search"
+                            id="box-lg2"
+                            name="box-inside-lg2"
+                            class="form-control"
+                            maxlength="4"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                            required
+                          />
+                          <span>个</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dropdown ml-auto d-flex align-items-center">
+                    <button
+                      type="button"
+                      class="btn p-0 text-nowrap"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      查看价格
+                      <span class="dropdown-toggle"></span>
+                    </button>
+                    <div class="dropdown-menu p-0">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" id="box-file">
+              <div class="form-title d-flex align-items-center">
+                <span class="title-icon"></span>
+                <span class="title-text">上传附件</span>
+              </div>
+              <div class="form-content d-flex align-items-center">
+                <div class="custom-file form-group">
+                  <input
+                    type="file"
+                    class="custom-file-input is-invalid"
+                    id="customFile"
+                  />
+                  <label class="custom-file-label" for="customFile">
+                    Choose file
+                  </label>
+                  <div class="invalid-feedback m-0">
+                    支持ai/coreldraw文件，建议命名清楚
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" id="box-order"></div>
           </div>
-        </form>
-      </article>
+        </article>
+
+        <article
+          class="form-group row m-0 d-flex justify-content-center w-100"
+          id="carousel-control"
+        >
+          <button
+            type="button"
+            class="back btn btn-outline-danger p-0"
+            name="back"
+            id="back2"
+            href="#paperbox"
+            role="button"
+            data-slide="prev"
+          >
+            上一步
+          </button>
+          <button
+            type="submit"
+            class="next btn p-0 border-0"
+            name="next"
+            id="next2"
+            href="#paperbox"
+            role="button"
+            data-slide="next"
+          >
+            下一步
+          </button>
+        </article>
+      </form>
     </main>
 
     <footer>
