@@ -521,10 +521,10 @@
                   <div class="form-group m-0 d-flex flex-column">
                     <div class="form-row no-gutters m-0">
                       <div
-                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                        class="custom-control custom-checkbox custom-control-inline p-0 col-sm col-12"
                       >
                         <input
-                          type="radio"
+                          type="checkbox"
                           id="outside-amount"
                           name="box-amount"
                           class="custom-control-input d-none"
@@ -591,10 +591,10 @@
 
                     <div class="form-row no-gutters m-0">
                       <div
-                        class="custom-control custom-radio custom-control-inline p-0 col-sm col-12"
+                        class="custom-control custom-checkbox custom-control-inline p-0 col-sm col-12"
                       >
                         <input
-                          type="radio"
+                          type="checkbox"
                           id="inside-amount"
                           name="box-amount"
                           class="custom-control-input d-none"
@@ -683,7 +683,7 @@
                 <span class="title-text">上传附件</span>
               </div>
               <div class="form-content d-flex align-items-center">
-                <div class="custom-file form-group">
+                <div class="custom-file form-group h-100">
                   <input
                     type="file"
                     class="custom-file-input is-invalid"
@@ -699,7 +699,60 @@
               </div>
             </div>
 
-            <div class="carousel-item" id="box-order"></div>
+            <div class="carousel-item" id="box-order">
+              <div class="form-title d-flex align-items-center ">
+                <span class="title-icon"></span>
+                <span class="title-text">下单信息</span>
+              </div>
+              <div class="form-content d-flex flex-column align-items-center">
+                <div class="summary container">
+                  <dl class="row m-0">
+                    <dt class="col-sm-2 text-nowrap">纸箱箱型</dt>
+                    <dd class="col-sm-10">
+                      对口箱
+                    </dd>
+
+                    <dt class="col-sm-2 text-nowrap">纸箱尺寸</dt>
+                    <dd class="col-sm-10">
+                      <dl class="row m-0 no-gutter">
+                        <dt class="col-sm-12 p-0 m-0">外径</dt>
+                        <dd class="col p-0 text-nowrap">长 300mm</dd>
+                        <dd class="col p-0 text-nowrap">宽 150mm</dd>
+                        <dd class="col p-0 text-nowrap">高 200mm</dd>
+                      </dl>
+                    </dd>
+
+                    <dt class="col-sm-2 text-nowrap">纸箱材质</dt>
+                    <dd class="col-sm-10">
+                      三层A瓦优质
+                    </dd>
+
+                    <dt class="col-sm-2 text-nowrap">纸箱个数</dt>
+                    <dd class="col-sm-10">
+                      <dl class="row m-0 no-gutter">
+                        <dt class="col-sm-12 p-0 m-0">外包装</dt>
+                        <dd class="col p-0 text-nowrap">小 x10</dd>
+                        <dd class="col p-0 text-nowrap">中 x30</dd>
+                        <dd class="col p-0 text-nowrap">大 x5</dd>
+                      </dl>
+                    </dd>
+
+                    <dt class="col-sm-2">合计</dt>
+                    <dd class="price col ml-auto text-right text-nowrap">
+                      ￥ 125.00元
+                    </dd>
+                  </dl>
+                </div>
+
+                <button
+                  type="submit"
+                  name="order"
+                  class="order btn btn-block p-0 border-0"
+                >
+                  下 单
+                </button>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -711,7 +764,7 @@
             type="button"
             class="back btn btn-outline-danger p-0"
             name="back"
-            id="back2"
+            id="back"
             href="#paperbox"
             role="button"
             data-slide="prev"
@@ -722,7 +775,7 @@
             type="submit"
             class="next btn p-0 border-0"
             name="next"
-            id="next2"
+            id="next"
             href="#paperbox"
             role="button"
             data-slide="next"
@@ -790,10 +843,6 @@
     <script src="../cssform/bootstrap/bootstrap.min.js"></script>
 
     <script>
-      $(function() {
-        $('[data-toggle="popover"]').popover();
-      }); //弹出提示框的触发条件
-
       $("header .btn").click(function() {
         $("header .btn").removeClass("active");
         $(this).addClass("active");
@@ -803,6 +852,28 @@
         $("nav .nav-item").removeClass("active");
         $(this).addClass("active");
       }); // 自动添加active
+
+      $("#back").click(function() {
+        if ($("#steps section:eq(1)").hasClass("active")) {
+          $("#back").hide();
+        } else {
+          $("#back").show();
+        }
+      }); // 当点击上一页的按钮时，如果第二页是有active的类，则返回第一页时上一页按钮消失
+      $("#next").click(function() {
+        $("#back").show();
+      }); // 点击下一页按钮时，上一页按钮显示，由此实现第一页没有上一页按钮
+
+      $("#next").click(function() {
+        if ($("#steps section:eq(2)").hasClass("active")) {
+          $("#next").hide();
+        } else {
+          $("#next").show();
+        }
+      }); // 当点击下一页的按钮时，如果第三页即倒数第二页是有active的类，则到最后一页时下一页按钮消失
+      $("#back").click(function() {
+        $("#next").show();
+      }); // 点击上一页按钮时，下一页按钮显示，由此实现最后一页没有下一页按钮
     </script>
   </body>
 </html>
