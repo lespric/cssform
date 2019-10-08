@@ -120,6 +120,7 @@ main {
 
 #steps {
   float: right;
+  position: relative;
   padding: 1em 0;
 }
 #steps .progress {
