@@ -143,7 +143,7 @@ main {
   border-radius: 0.1em 0 0 0.1em;
 }
 #steps section:last-child .progress,
-#steps section:first-child .progress-bar {
+#steps section:last-child .progress-bar {
   border-radius: 0 0.1em 0.1em 0;
 } /* 定义进度条的左右两端的圆角 */
 #steps .step {
