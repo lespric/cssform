@@ -40,12 +40,12 @@ body {
 header {
   padding: 0 18.75%;
 
-  font-size: 0.4em;
   color: #fff;
-
   background-color: #1d7ad9;
 } /* 定义页首属性 */
-
+header .phone {
+  font-size: 0.4em;
+}
 header .btn-group {
   height: 100%;
 }
