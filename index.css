@@ -430,8 +430,11 @@ section .step-text {
 #box-order .form-content dd {
  margin: 1em 0;
 
- font-size: .4em;
+ font-size: .5em;
  color: #666;
+}
+#box-order .form-content dl {
+  margin: .5em 0;
 }
 #box-order .form-content .price {
  font-size: 1rem;
